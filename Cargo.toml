@@ -1,0 +1,33 @@
+[package]
+name = "evm-bounty-hunter"
+version = "0.3.0"
+edition = "2021"
+authors = ["Security Researcher"]
+description = "Advanced EVM vulnerability scanner & live radar for bug bounty hunting"
+
+[dependencies]
+tiny-keccak = { version = "2", features = ["keccak"] }
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+regex = "1"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+colored = "2.1"
+chrono = { version = "0.4", features = ["serde"] }
+solang-parser = "0.3"
+walkdir = "2"
+tempfile = "3"
+toml = "0.8"
+dotenvy = "0.15"
+
+[[bin]]
+name = "evm-bounty-hunter"
+path = "src/main.rs"
+
+[lib]
+name = "evm_bounty_hunter"
+path = "src/lib.rs"
